@@ -1,20 +1,20 @@
 /**
  * Created by user on 15.04.16.
  */
-var white = "#FFFFFF";		// Р§РµСЂРЅС‹Р№ С†РІРµС‚
-var black = "#000000";		// Р‘РµР»С‹Р№ С†РІРµС‚
-var n = 8;					// РљРѕР»РёС‡РµСЃС‚РІРѕ СЂСЏРґРѕРІ Рё СЏС‡РµРµРє РІ СЂСЏРґСѓ
-var color = white;			// РўРµРєСѓС‰РёР№ С†РІРµС‚
+var white = "#FFFFFF";		// Черный цвет
+var black = "#000000";		// Белый цвет
+var n = 8;					// Количество рядов и ячеек в ряду
+var color = white;			// Текущий цвет
 
-n = prompt("Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ РїРѕР»СЏ N x N","");
+n = prompt("Введите размер поля N x N","");
 
-// РћС‚СЂРёСЃРѕРІРєР° С‚Р°Р±Р»РёС†С‹
+// Отрисовка таблицы
 document.write("<table>");
-// Р¦РёРєР» СЂСЏРґРѕРІ
+// Цикл рядов
 for (var tr = 1; tr <= n; tr++)
 {
     document.write("<tr>");
-    // Р¦РёРєР» СЏС‡РµРµРє
+    // Цикл ячеек
     for (var td = 1; td <= n; td++)
     {
         if (tr == 1 || td == 1)
@@ -24,14 +24,14 @@ for (var tr = 1; tr <= n; tr++)
         document.write("&nbsp;")
         document.write("</td>")
         //document.write("<td style=\"background-color:" + color + "\">&nbsp;</td>");
-        // РЎРјРµРЅР° С‚РµРєСѓС‰РµРіРѕ С†РІРµС‚Р°
+        // Смена текущего цвета
         if (td == n)
             if ((n % 2) == 0)
                 continue;
         color = (color == black) ? white : black;
     }
-    // РљРѕРЅРµС† СЂСЏРґР°
+    // Конец ряда
     document.write("</tr>");
 }
-// РљРѕРЅРµС† С‚Р°Р±Р»РёС†С‹
+// Конец таблицы
 document.write("</table>");
