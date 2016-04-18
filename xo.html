@@ -25,10 +25,10 @@
         }else{
 
 
-        if ((x % 1) == 0) {
-            cell.style.backgroundImage = 'url(img/x.png)';
-            cell.style.backgroundRepeat = 'no-repeat';
-        }
+            if ((x % 1) == 0) {
+                cell.style.backgroundImage = 'url(img/x.png)';
+                cell.style.backgroundRepeat = 'no-repeat';
+            }
         }
     }
 
@@ -42,7 +42,7 @@
         for (var td = 1; td <= n; td++)
         {
             var w = "<td align='center' onclick='sendData("+tr+","+td+");'>";
-                document.write(w);
+            document.write(w);
             document.write("</td>");
         }
         // Конец ряда
