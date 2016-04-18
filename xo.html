@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <!--<title>Демонстрация цикла for</title>-->
+    <title>Крестики и Нолики</title>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
     <style type="text/css">
         table { border-collapse: collapse }
@@ -11,22 +11,25 @@
 </head>
 
 <body>
-<!--<h1>Демонстрация цикла for</h1>-->
+<h1>Крестики и Нолики</h1>
 
 <script type="text/javascript">
-    function sendData(i, j){
+    var x = 0;                                   //Колличество ходов
+    var  n = prompt("Введите величину поля");    // Количество рядов и ячеек в ряду
 
-        alert(i +' , '+ j);
-        var row = document.getElementsByTagName('tr')[i-1].getElementsByTagName('td')[j-1].style.color = 'red';
-//        var cells = document.getElementsByTagName('tr')[4];
-//        row.parentNode.removeChild(row);
-//        cells.parentNode.removeChild(cells);
+    function sendData(i, j) {
+        x++;
+        var cell = document.getElementsByTagName('tr')[i - 1].getElementsByTagName('td')[j - 1];
+        if ((x % 2) == 0) {
+            cell.style.backgroundColor = "black";
+        }else{
 
+
+        if ((x % 1) == 0) {
+            cell.style.backgroundColor = "red";
+        }
+        }
     }
-    var white = "#FFFFFF";		// Черный цвет
-    var black = "#000000";		// Белый цвет
-    var n = 5;					// Количество рядов и ячеек в ряду
-    var color = white;			// Текущий цвет
 
     // Отрисовка таблицы
     document.write("<table>");
@@ -39,13 +42,8 @@
         {
             var w = "<td onclick='sendData("+tr+","+td+");'>";
                 document.write(w);
-            document.write(tr + ', '+ td);
+                document.write("&nbsp;");
             document.write("</td>");
-//            if (td == n)
-//                if ((n % 2) == 0)
-//                    continue;
-//            color = (color == black) ? white : black;
-
         }
         // Конец ряда
         document.write("</tr>");
