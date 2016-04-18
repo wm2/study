@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+    <!--<title>Демонстрация цикла for</title>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+    <style type="text/css">
+        table { border-collapse: collapse }
+        td { border: 1px solid black; width: 30px; height: 30px }
+    </style>
+</head>
+
+<body>
+<!--<h1>Демонстрация цикла for</h1>-->
+
+<script type="text/javascript">
+    function sendData(i, j){
+
+        alert(i +' , '+ j);
+        var row = document.getElementsByTagName('tr')[i-1].getElementsByTagName('td')[j-1].style.color = 'red';
+//        var cells = document.getElementsByTagName('tr')[4];
+//        row.parentNode.removeChild(row);
+//        cells.parentNode.removeChild(cells);
+
+    }
+    var white = "#FFFFFF";		// Черный цвет
+    var black = "#000000";		// Белый цвет
+    var n = 5;					// Количество рядов и ячеек в ряду
+    var color = white;			// Текущий цвет
+
+    // Отрисовка таблицы
+    document.write("<table>");
+    // Цикл рядов
+    for (var tr = 1; tr <= n; tr++)
+    {
+        document.write("<tr>");
+        // Цикл ячеек
+        for (var td = 1; td <= n; td++)
+        {
+            var w = "<td onclick='sendData("+tr+","+td+");'>";
+                document.write(w);
+            document.write(tr + ', '+ td);
+            document.write("</td>");
+//            if (td == n)
+//                if ((n % 2) == 0)
+//                    continue;
+//            color = (color == black) ? white : black;
+
+        }
+        // Конец ряда
+        document.write("</tr>");
+    }
+    // Конец таблицы
+    document.write("</table>");
+</script>
+
+
+
+</body>
+</html>
