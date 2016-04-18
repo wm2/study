@@ -20,14 +20,12 @@
         x++;
         var cell = document.getElementsByTagName('tr')[i - 1].getElementsByTagName('td')[j - 1];
         if ((x % 2) == 0) {
-//            cell.style.backgroundColor = "black";
             cell.style.backgroundImage= 'url(img/o.png)';
             cell.style.backgroundRepeat = 'no-repeat';
         }else{
 
 
         if ((x % 1) == 0) {
-//            cell.style.backgroundColor = "red";
             cell.style.backgroundImage = 'url(img/x.png)';
             cell.style.backgroundRepeat = 'no-repeat';
         }
@@ -45,7 +43,6 @@
         {
             var w = "<td align='center' onclick='sendData("+tr+","+td+");'>";
                 document.write(w);
-//                document.write("&nbsp;");
             document.write("</td>");
         }
         // Конец ряда
