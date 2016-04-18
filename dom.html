@@ -1,0 +1,84 @@
+<html>
+<body><h1>HTML DOM.</h1><p style='color:green'>орапорм.</p>
+<hr />
+<b><script type='text/javascript'>
+    /* Прочитаем содержимое элемента p и выведем результат на страницу:
+     1. Обратимся к первому элементу потомку body (h1).
+     2. Перейдем к следующему узлу брату. (p)
+     3. Обратимся к текстовому узлу соответствующего элемента.
+     4. Обратимся к содержимому текстового узла. */
+    document.write(document.body.childNodes[0].nextSibling.childNodes[0].nodeValue);
+</script></b>
+<p><b>Обратите внимание:</b> из-за особеностей работы данного редактора для того, чтобы правильно считать содержимое абзаца мы должны использовать:
+    document.body.childNodes[1] вместо document.body.childNodes[0].</p>
+
+<p id='par1'>Это первый абзац на странице. </p>
+<p id='elem1'>Я элемент 1. Попробуйте вывести мое содержимое на страницу </p>
+<p id='par2'> Это второй абзац на странице. </p>
+<div id='wrap1'>
+    <p id='elem2'>Я элемент 2. Попробуйте вывести мое содержимое на страницу. </p>
+</div>
+<script type='text/javascript'>
+    //Узнаем содержимое первого абзаца на странице и запишем результат в x
+    x=document.getElementById('elem1').childNodes[0].nodeValue;
+    //Выведим результат на страницу
+    document.write(x + '<br />');
+    //Узнаем содержимое второго абзаца и запишем результат в y
+    y=document.getElementById('elem2').childNodes[0].nodeValue;
+    //Выведим результат на страницу
+    document.write(y);
+</script>
+<script type='text/javascript'>
+    function addElement(){
+        document.getElementById('but1').style.display='none';
+        document.getElementById('but2').style.display='inline';
+        /* Пишите код здесь */
+        var newp = document.createElement('p');
+        var newh	 = document.createElement('h3');
+        document.getElementById('wrapb').appendChild(newp).innerHTML = 'Добавьте меня в синюю рамку';
+        document.getElementById('wrapr').appendChild(newh).innerHTML = 'Добавьте меня в красную рамку';
+    }
+    function delElement(){
+        document.getElementById('but1').style.display='inline';
+        document.getElementById('but2').style.display='none';
+        /* Пишите код здесь*/
+        var list = document.getElementById("wrapb");
+        list.removeChild(list.childNodes[1]);
+        var list2 = document.getElementById("wrapr");
+        list2.removeChild(list2.childNodes[1]);
+    }
+</script>
+<p><b>Добавьте абзац с содержимым 'Добавьте меня в синюю рамку' в элемент с id='wrapb', а заголовок h3 с содержимым 'Добавьте меня к красную рамку' в элемент с id='wrapr' (элементы p и h3 должны быть предварительно созданы в скрипте с помощью createElement). Также предусмотрите удаление созданных элементов.</b></p>
+<div id='wrapb' style='border-style:solid;height:50px;width:700px;color:blue;'>
+</div>
+<br /><br />
+<div id='wrapr' style='border-style:solid;height:60px;width:700px;color:red;'>
+</div>
+<br />
+<input id='but1' type='button' value='Добавить элементы в рамки выше' onclick='addElement()' />
+<input id='but2' style='display:none;' type='button' value='Удалить элементы из рамок выше' onclick='delElement()' />
+<script type='text/javascript'>
+    function start(){
+        document.getElementById('elp').style.color='red';
+        document.getElementById('elp').style.fontWeight='bold';
+        document.body.style.backgroundColor = 'green';
+    }
+</script>
+
+<p id='elp' onclick='start()'>Щелкните на мне мышкой.</p>
+<script type='text/javascript'>
+    function styleChange(){
+        /* Пишите код здесь */
+        document.getElementById('stych').style.color='red';
+        document.getElementById('stych').style.backgroundColor='gray';
+        document.getElementById('stych').style.fontWeight='bold';
+        document.getElementById('stych').style.fontSize = '20px';
+        document.getElementById('stych').style.fontFamily ='Verdana';
+        document.getElementById('stych').style.border='1px solid green';
+    }
+</script>
+<p id='stych'>Я абзац который необходимо оформить.</p>
+<input type='button' value='Оформить абзац' onclick='styleChange()' />
+</body>
+</html>
+

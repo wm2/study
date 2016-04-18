@@ -1,0 +1,54 @@
+<html>
+<body onload="messageLoad()" onunload="messageUnload">
+
+<script type="text/javascript">
+
+    function oneclick(){
+//    alert('asdas');
+        document.getElementById('par1').style.backgroundColor = 'green';
+
+    }
+    function dblclick(){
+        document.getElementById('par2').style.backgroundColor = 'red';
+    }
+    function clearStyle(){
+        document.getElementById('par1').style.backgroundColor = '';
+    }
+    function clearStyle2(){
+        document.getElementById('par2').style.backgroundColor = '';
+    }
+    function greenBorder(){
+        document.getElementById('par1').style.border = '1px solid green';
+        document.getElementById('par2').style.border = '1px solid green';
+    }
+    function redBoreder(){
+        document.getElementById('par1').style.border = '3px solid red';
+        document.getElementById('par2').style.border = '3px solid red';
+    }
+    function messageLoad()
+    {
+        alert('Добро пожаловать в задание 1');
+    }
+    function messageUnload()
+    {
+        alert('Вы покидаете задание 1');
+    }
+
+</script>
+
+<p><b>1. При одинарном нажатии на кнопку c id=but1 цвет текста абзаца с id=par1 изменялся на зеленый.<br />
+    2. При двойном нажатии на кнопку с id=but2 цвет текста абзаца с id=par2 изменялся на красный.<br />
+    3. При наведении указателя мыши на абзацы с id=par1 и id=par2 цвет их текста сбрасывался на стандартный (т.е. черный).<br />
+    4. При одинарном нажатии на кнопку с id=but3 вокруг абзацев с id=par1 и id=par2 рисовалась граница зеленого цвета толщиной 1 пиксель.<br />
+    5. При двойном нажатии на кнопку с id=but4 вокруг абзацев с id=par1 и id=par2 рисовалась граница красного цвета толщиной 3 пикселя.<br />
+    6. При загрузке документа отображалось окно оповещения с текстом 'Добро пожаловать в задание 1'.<br />
+    7. При закрытии документа отображалось окно оповещения с текстом 'Вы покидаете задание 1'.</b></p>
+
+<p id='par1' onmouseover="clearStyle()"> Я первый абзац.</p>
+<p id='par2' onmouseover="clearStyle2()"> Я второй абзац. </p>
+<input id='but1' type='button' value='Кнопка 1' onclick="oneclick()"/>
+<input id='but2' type='button' value='Кнопка 2' ondblclick="dblclick()" />
+<input id='but3' type='button' value='Кнопка 3' onclick="greenBorder()"/>
+<input id='but4' type='button' value='Кнопка 4' ondblclick="redBoreder()"/>
+</body>
+</html>
