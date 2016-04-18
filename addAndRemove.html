@@ -1,0 +1,59 @@
+<html>
+<body>
+<table border='1'>
+    <tr>
+        <th>Язык</th>
+        <th>Общее количество говорящих(млн.)</th>
+    </tr>
+    <tr>
+        <td>Английский</td>
+        <td>500-1600</td>
+    </tr>
+    <tr>
+        <td>Испанский</td>
+        <td>390</td>
+    </tr>
+    <tr>
+        <td>Китайский</td>
+        <td>1025</td>
+    </tr>
+    <tr>
+        <td>Руcский</td>
+        <td>250</td>
+    </tr>
+    <tr>
+        <td>Хинди</td>
+        <td>450</td>
+    </tr>
+</table>
+<hr />
+<script type='text/javascript'>
+    var row = document.getElementsByTagName('tr')[2];
+    var cells = document.getElementsByTagName('tr')[4];
+    row.parentNode.removeChild(row);
+    cells.parentNode.removeChild(cells);
+
+   var append =  document.getElementsByTagName('tr')[0].parentNode;
+
+    var arr = ["Японский", "Французский", "Немецкий"];
+    var col = [123,120,118];
+
+    for (var i = 0; i < arr.length; i++) {
+
+        var ctr = document.createElement('tr');
+        var ctd1 = document.createElement('td');
+        var ctd2 = document.createElement('td');
+        var ctd11 = document.createTextNode(arr[i]);
+        var ctd22 = document.createTextNode(col[i]);
+        append.appendChild(ctr);
+        ctr.appendChild(ctd1);
+        ctr.appendChild(ctd2);
+
+        ctd1.appendChild(ctd11);
+        ctd2.appendChild(ctd22);
+
+    }
+
+</script>
+</body>
+</html>
