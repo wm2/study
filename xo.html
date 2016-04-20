@@ -14,42 +14,85 @@
 <h1>Крестики и Нолики</h1>
 
 <script type="text/javascript">
-    var x = 0;                                   //Колличество ходов
     var  n = prompt("Введите величину поля");    // Количество рядов и ячеек в ряду
+    var x = 0;                                   //Колличество ходов
+
     function sendData(i, j) {
-        x++;
+        x = x + 1;
+        if (x == 1)
+            var   arr =  matrixArray(n,n);
+
+
         var cell = document.getElementsByTagName('tr')[i - 1].getElementsByTagName('td')[j - 1];
+        cell.removeAttribute('onclick');
         if ((x % 2) == 0) {
             cell.style.backgroundImage= 'url(img/o.png)';
             cell.style.backgroundRepeat = 'no-repeat';
+            checkWin(i,j, 1, arr);
         }else{
 
 
             if ((x % 1) == 0) {
                 cell.style.backgroundImage = 'url(img/x.png)';
                 cell.style.backgroundRepeat = 'no-repeat';
+                checkWin(i,j, 2, arr);
             }
         }
+
+    }
+        function checkWin(k,l, player, arr){
+
+            for(var i=1; i<=n; i++){
+                for(var j=1; j<=n; j++){
+//                    if (arr[i][j] > 0)
+//                    continue;
+                    if ((i == k) && (j == l))
+                 arr[i][j] = 5;
+                }
+            }
+            return arr;
     }
 
-    // Отрисовка таблицы
-    document.write("<table>");
-    // Цикл рядов
-    for (var tr = 1; tr <= n; tr++)
-    {
-        document.write("<tr>");
-        // Цикл ячеек
-        for (var td = 1; td <= n; td++)
-        {
-            var w = "<td align='center' onclick='sendData("+tr+","+td+");'>";
-            document.write(w);
-            document.write("</td>");
+    function matrixArray(rows,columns){
+        var arr = [];
+        for(var i=1; i<=columns; i++){
+            arr[i] = [];
+            for(var j=1; j<=rows; j++){
+                arr[i][j] = 0;//вместо i+j+1 пишем любой наполнитель. В простейшем случае - null
+            }
         }
-        // Конец ряда
-        document.write("</tr>");
+        return arr;
     }
-    // Конец таблицы
-    document.write("</table>");
+
+
+    function reset() {
+        alert("Игра окончена!");
+        location.reload();
+    }
+
+    function startGame(){
+        // Отрисовка таблицы
+        document.write("<table>");
+        // Цикл рядов
+        for (var tr = 1; tr <= n; tr++)
+        {
+            document.write("<tr>");
+            // Цикл ячеек
+            for (var td = 1; td <= n; td++)
+            {
+                var w = "<td align='center' onclick='sendData("+tr+","+td+");'>";
+                document.write(w);
+                document.write("</td>");
+            }
+            // Конец ряда
+            document.write("</tr>");
+        }
+        // Конец таблицы
+        document.write("</table>");
+    }
+    startGame();
+    document.writeln("<br />");
+    document.writeln("<button onclick='reset();'>Начать новую игру</button>");
 </script>
 
 
