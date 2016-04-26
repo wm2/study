@@ -1,0 +1,17 @@
+{
+  "aaData": [
+    {"name": "narod.ru", "url": "http://narod.ru/", "name_b": "Блог", "phone": "123456789"},
+    {"name": "yandex.ru", "url": "http://yandex.ru/", "name_b": "Блог", "phone": "123456789"},
+    {"name": "google.ru", "url": "http://google.ru/", "name_b": "Блог", "phone": "123456789"},
+    {"name": "bing.com", "url": "http://bing.com/", "name_b": "Блог", "phone": "123456789"},
+    {"name": "l2db.ru", "url": "http://l2db.ru/", "name_b": "Блог", "phone": "123456789"},
+    {"name": "htmlhook.ru", "url": "http://htmlhook.ru/", "name_b": "Блог", "phone": "123456789"},
+    {"name": "sdasa.ru", "url": "http://sdf.ru/", "name_b": "Сайт", "phone": "0123456789"},
+    {"name": "sdasa.ru", "url": "http://asf.ru/", "name_b": "Сайт", "phone": "0123456789"},
+    {"name": "site.ru", "url": "http://site.ru/", "name_b": "Блог", "phone": "123456789"},
+    {"name": "vk.com", "url": "http://vk.ru/", "name_b": "Блог", "phone": "123456789"},
+    {"name": "javascript.ru", "url": "http://javascript.ru/", "name_b": "Блог", "phone": "123456789"},
+    {"name": "jquery.com", "url": "http://jquery.com/", "name_b": "Блог", "phone": "123456789"},
+    {"name": "sdasa.ru", "url": "http://sdasa.ru/", "name_b": "Сайт", "phone": "0123456789"}
+  ]
+}
