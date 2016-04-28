@@ -1,0 +1,50 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+</head>
+<body>
+<table id="example">
+    <thead>
+    <tr>
+        <th class="site_name">Название</th>
+        <th>Адрес</th>
+        <th>Тип</th>
+        <th>Последние изменения</th>
+    </tr>
+    </thead>
+</table>
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script>
+    $("#example").dataTable({
+        "bFilter": false,
+        "aLengthMenu": [[10, 15, 25, 50, -1], [10, 15, 25, 50]],
+        "iDisplayLength": 10,
+    "aaData":[
+            ["ya.ru","http://htmlhook.ru/","Блог","2013-10-15 10:30:00"],
+
+        ],
+        "aoColumnDefs":[{
+            "sTitle":"Название сайта"
+            , "aTargets": [ "site_name" ]
+        },{
+            "aTargets": [ 1 ]
+            , "bSortable": false
+            , "mRender": function ( url, type, full )  {
+                return  '<a href="'+url+'">' + url + '</a>';
+            }
+        },{
+            "aTargets":[ 3 ]
+            , "sType": "date"
+            , "mRender": function(date, type, full) {
+                return (full[2] == "Блог")
+                        ? new Date(date).toDateString()
+                        : "N/A" ;
+            }
+        }]
+    });
+</script>
+</body>
+</html>
+Важно
+http://javascript.ru/forum/misc/46312-filtr-v-tablice-po-select-am.html

@@ -1,0 +1,61 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+</head>
+<body>
+<table id="example">
+    <thead>
+    <tr>
+        <th class="site_name">Название</th>
+        <th>Адрес</th>
+        <th>Тип</th>
+        <th>Последние изменения</th>
+    </tr>
+    </thead>
+</table>
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script>
+
+    $("#example").dataTable({
+        "bFilter": false,
+        "aLengthMenu": [[10, 15, 25, 50], [10, 15, 25, 50]],
+        "iDisplayLength": 10,
+        "aaData": [
+            {"name": "narod.ru", "url": "http://narod.ru/", "name_b": "Блог", "phone": "123456789"},
+            {"name": "yandex.ru", "url": "http://yandex.ru/", "name_b": "Блог", "phone": "123456789"},
+            {"name": "google.ru", "url": "http://google.ru/", "name_b": "Блог", "phone": "123456789"},
+            {"name": "bing.com", "url": "http://bing.com/", "name_b": "Блог", "phone": "123456789"},
+            {"name": "l2db.ru", "url": "http://l2db.ru/", "name_b": "Блог", "phone": "123456789"},
+            {"name": "htmlhook.ru", "url": "http://htmlhook.ru/", "name_b": "Блог", "phone": "123456789"},
+            {"name": "sdasa.ru", "url": "http://sdf.ru/", "name_b": "Сайт", "phone": "0123456789"},
+            {"name": "sdasa.ru", "url": "http://asf.ru/", "name_b": "Сайт", "phone": "0123456789"},
+            {"name": "site.ru", "url": "http://site.ru/", "name_b": "Блог", "phone": "123456789"},
+            {"name": "vk.com", "url": "http://vk.ru/", "name_b": "Блог", "phone": "123456789"},
+            {"name": "javascript.ru", "url": "http://javascript.ru/", "name_b": "Блог", "phone": "123456789"},
+            {"name": "jquery.com", "url": "http://jquery.com/", "name_b": "Блог", "phone": "123456789"},
+            {"name": "sdasa.ru", "url": "http://sdasa.ru/", "name_b": "Сайт", "phone": "0123456789"}
+        ],
+        "aoColumnDefs":[{
+            "sTitle":"Название сайта",
+            "mData":"name",
+            "aTargets": [ "site_name" ]
+        },{
+            "aTargets": [ 1 ],
+            "mData":"url"
+            , "bSortable": false
+            , "mRender": function ( url, type, full )  {
+                return  '<a href="'+url+'">' + url + '</a>';
+            }
+        },{
+            "aTargets":[ 2 ],
+            "mData":"name_b"
+            , "sType": "string"
+        },{
+            "aTargets": [ 3 ],
+            "mData":"phone"
+        }]
+    });
+</script>
+</body>
+</html>

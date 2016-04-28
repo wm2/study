@@ -1,0 +1,113 @@
+<html>
+<head>
+    <title></title>
+    <script src="jquery-2.2.3.min.js"></script>
+    <script src="main.js"></script>
+
+</head>
+<body>
+
+<p>
+    <button class="btn btn-info filter1">Search 'some' in column 2</button>
+</p>
+<p>
+    <button class="btn btn-info filter2">Search 'here' in column 1</button>
+</p>
+<p>
+    <button class="btn btn-info filter3">Search 'put' in column 1 and 'here' in column 3</button>
+</p>
+<p>
+    <button class="btn btn-danger filter4">Reset filter</button>
+</p>
+<!---->
+<div class="tour" data-daily-price="357">
+    <!--<h2>Paris, France Tour</h2>-->
+    <!--<p>$<span id="total">2,499</span> for <span id="nights-count">7</span> Nights</p>-->
+    <!--<p>-->
+        <!--<label for="nights">Number of Nights</label>-->
+    <!--</p>-->
+    <p>
+        <input type="string" id="nights" value="any">
+    </p>
+</div>
+
+
+<!---->
+<script type="text/javascript">
+
+    <!---->
+    $(document).ready(function() {
+        $('#nights').on('keyup', function() {
+//            var nights = +$(this).val();
+//            var dailyPrice = +$(this).closest('.tour').data('daily-price');
+//            $('#total').text(nights * dailyPrice);
+//            $('#nights-count').text($(this).val());
+            apply_filter('.table tbody', 3, $(this).val());
+
+
+        });
+
+    });
+
+    <!---->
+
+    $('.filter1').click(function(){
+        filters = [];
+        apply_filter('.table tbody', 2, 'some');
+    });
+
+    $('.filter2').click(function(){
+        filters = [];
+        apply_filter('.table tbody', 1, 'here');
+    });
+
+    $('.filter3').click(function(){
+        filters = [];
+        apply_filter('.table tbody', 1, 'put');
+        apply_filter('.table tbody', 3, 'here');
+    });
+
+    $('.filter4').click(function(){
+        filters = [];
+        apply_filter('.table tbody', 1, 'any');
+    });
+
+
+
+</script>
+<table class="table table-striped tabled-bordered">
+    <thead>
+    <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <th>Column 3</th>
+        <th>Column 4</th>
+        <th>#</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>put</td>
+        <td>here</td>
+        <td>some</td>
+        <td>words</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>here</td>
+        <td>some</td>
+        <td>another</td>
+        <td>words</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>put</td>
+        <td>some</td>
+        <td>here</td>
+        <td>please</td>
+        <td>3</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
