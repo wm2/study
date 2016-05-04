@@ -1,0 +1,28 @@
+dl.stars ol{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100px;
+    height: 20px;
+    background: url("../img/stars.png");
+    position: relative;
+}
+dl.stars li{
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+dl.stars li a{
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    position: absolute;
+    text-decoration: none;
+    z-index: 10;
+}
+dl.stars li a:hover{
+    background: url("../img/stars.png") left center;
+    left: 0;
+    z-index: 2;
+}
