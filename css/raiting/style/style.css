@@ -26,3 +26,37 @@ dl.stars li a:hover{
     left: 0;
     z-index: 2;
 }
+dl.stars a.star1{
+    left: 0
+}
+
+dl.stars a.star1:hover{
+    width: 20px;
+}
+
+dl.stars a.star2{
+    left: 20px;
+}
+
+dl.stars a.star2:hover{
+    width: 40px;
+}
+
+dl.stars a.star3{
+    left: 40px;
+}
+dl.stars a.star3:hover{
+    width: 60px;
+}
+dl.stars a.star4{
+    left: 60px;
+}
+dl.stars a.star4:hover{
+    width: 80px;
+}
+dl.stars a.star5{
+    left: 80px;
+}
+dl.stars a.star5:hover{
+    width: 100px;
+}
